@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pocket Option Script Injector</title>
+</head>
+<body>
+  <h1>PO Script Injector</h1>
+  <button onclick="inject('script1_ai_button.js')">Inject AI Trading Button</button><br><br>
+  <button onclick="inject('script2_load_svg.js')">Load AI Badge (External SVG)</button><br><br>
+  <button onclick="inject('script3_demo_to_real.js')">Change Demo to Real</button>
+
+  <script>
+    function inject(file) {
+      const script = document.createElement("script");
+      script.src = "/static/js/" + file;
+      script.onload = () => alert(file + " injected!");
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
